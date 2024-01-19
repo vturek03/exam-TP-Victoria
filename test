@@ -1,0 +1,39 @@
+#include <iostream>
+
+class MaClasse {
+public:
+    // Déclaration de l'énumération à l'intérieur de la classe
+    enum MaEnum { D, Es, El };
+
+    // Constructeur prenant un paramètre de type énumération
+    MaClasse(MaEnum valeur) : maVariable(valeur) {}
+
+    // Méthode pour accéder à la valeur de la variable énumération
+    void afficherValeur() {
+        switch (maVariable) {
+            case D:
+                std::cout << "La valeur est D." << std::endl;
+                break;
+            case Es:
+                std::cout << "La valeur est Es." << std::endl;
+                break;
+            case El:
+                std::cout << "La valeur est El." << std::endl;
+                break;
+            default:
+                std::cout << "Valeur inconnue." << std::endl;
+        }
+    }
+
+private:
+    // Variable de type énumération en tant que membre privé de la classe
+    MaEnum maVariable;
+};
+
+int main() {
+    // Utilisation de la classe avec une variable énumération en paramètre
+    MaClasse monObjet(MaClasse::D);
+    monObjet.afficherValeur();
+
+    return 0;
+}
